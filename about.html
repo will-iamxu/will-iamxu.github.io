@@ -19,7 +19,7 @@
     }
 
     .container {
-      max-width: 600px; 
+      max-width: 600px; /* Adjust the width as needed */
       padding: 0 20px;
     }
 
@@ -35,6 +35,21 @@
     .about-section p {
       font-size: 18px;
       margin-bottom: 30px;
+    }
+
+    .about-section p::after {
+      content: "|";
+      display: inline-block;
+      animation: blink-caret 0.75s step-end infinite;
+    }
+
+    @keyframes blink-caret {
+      from, to {
+        border-color: transparent;
+      }
+      50% {
+        border-color: white;
+      }
     }
 
     .contact-links {
@@ -84,6 +99,30 @@
       background-color: #4527A0;
     }
   </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var aboutText = "Had my first ever coding experience with scratch in 4th grade making Illuminati conspiracy theories. Would then attempt to learn how to use command blocks in minecraft, which did not turn out very well at all. Joined robotics in 7th grade as part of the software side but was so terrible that I got kicked out. Gave up on coding until senior year of high school where coding sparked a newly found interest in myself. Now I code whatever projects that teach me something, is applicable, and is interesting. Currently a rising sophmore at TAMU.";
+      var aboutSection = document.querySelector(".about-section");
+      var aboutTextElement = aboutSection.querySelector("p");
+      var index = 0;
+
+      function typeText() {
+        if (index < aboutText.length) {
+          aboutTextElement.textContent += aboutText.charAt(index);
+          index++;
+          setTimeout(typeText, 45);
+        } else {
+          aboutTextElement.textContent = aboutTextElement.textContent.slice(0, -1);
+        }
+      }
+
+      typeText();
+    });
+
+    function navigateToHome() {
+      window.location.href = "index.html";
+    }
+  </script>
 </head>
 <body>
   <button class="home-button" onclick="navigateToHome()">Home</button>
@@ -91,7 +130,7 @@
   <div class="container">
     <div class="about-section">
       <h3>About Me</h3>
-      <p>Had my first ever coding experience with scratch in 4th grade making Illuminati conspiracy theories. Would then attempt to learn how to use command blocks in minecraft, which did not turn out very well at all. Joined robotics in 7th grade as part of the software side but was so terrible that I got kicked out. Gave up on coding until senior year of high school where coding sparked a newly found interest in myself. Now I code whatever projects that teach me something, is applicable, and is interesting. Currently a rising sophmore at TAMU.</p>
+      <p></p>
     </div>
   </div>
 
@@ -99,11 +138,5 @@
     <a href="https://github.com/will-iamxu" target="_blank"><img src="github-logo.png" alt="GitHub"></a>
     <a href="https://www.linkedin.com/in/william-xu-35507a22b/" target="_blank"><img src="linkedin-logo.png" alt="LinkedIn"></a>
   </div>
-
-  <script>
-    function navigateToHome() {
-      window.location.href = "index.html";
-    }
-  </script>
 </body>
 </html>
