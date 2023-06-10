@@ -1,150 +1,130 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Projects</title>
-    <style>
-        body {
-            background-color: #7E57C2;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Projects</title>
+  <style>
+    body {
+      background-color: #7E57C2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: #FFF;
+    }
 
-        .header {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            z-index: 999;
-        }
+    .project {
+      background-color: #4527A0;
+      width: 400px;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
 
-        .home-button {
-            background-color: #4527A0;
-            color: #FFF;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-        }
+    .project-title {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-        }
+    .project-description {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
 
-        .projects {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
+    .project-link {
+      font-size: 16px;
+      color: #FFF;
+      text-decoration: none;
+    }
 
-        .project {
-            flex-basis: calc(50% - 10px);
-            background-color: #4527A0;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            padding: 10px;
-            cursor: pointer;
-        }
+    .project-link:hover {
+      text-decoration: underline;
+    }
 
-        .project:hover {
-            opacity: 0.8;
-        }
+    .home-button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      padding: 10px 20px;
+      background-color: #7E57C2;
+      color: #FFF;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
 
-        .project img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-        }
+    .home-button:hover {
+      background-color: #4527A0;
+    }
 
-        .project-title {
-            margin-top: 5px;
-            font-size: 16px;
-            font-weight: bold;
-            color: #FFF;
-        }
+    .contact-links {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+    }
 
-        .project-description {
-            margin-top: 5px;
-            font-size: 12px;
-            color: #EEE;
-        }
+    .contact-links a {
+      display: inline-block;
+      margin-left: 10px;
+      width: 40px;
+      height: 40px;
+      background-color: #7E57C2;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 40px;
+      color: #7E57C2;
+      text-decoration: none;
+    }
 
-        .footer {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-        }
+    .contact-links a img {
+      width: 30px;
+      height: 30px;
+      background-color: transparent;
+    }
 
-        .footer a {
-            display: inline-block;
-            margin-left: 10px;
-            width: 40px;
-            height: 40px;
-            background-color: #7E57C2;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 40px;
-            color: #7E57C2;
-            text-decoration: none;
-        }
-
-        .footer a img {
-            width: 30px;
-            height: 30px;
-            background-color: transparent;
-        }
-
-        .footer a:first-child {
-            margin-right: 10px;
-        }
-
-        .footer a:hover {
-            background-color: #4527A0;
-            color: #FFF;
-        }
-    </style>
+    .contact-links a:hover {
+      background-color: #4527A0;
+      color: #FFF;
+    }
+  </style>
 </head>
 <body>
-    <div class="header">
-        <a href="index.html" class="home-button">Home</a>
-    </div>
+  <button class="home-button" onclick="navigateToHome()">Home</button>
 
-    <div class="container">
-        <div class="projects">
-            <a href="https://github.com/your-github-repo-1" target="_blank" class="project">
-                <img src="project1.jpg" alt="Project 1">
-                <h2 class="project-title">Project 1</h2>
-                <p class="project-description">Short description of Project 1</p>
-            </a>
-            <a href="https://github.com/your-github-repo-2" target="_blank" class="project">
-                <img src="project2.jpg" alt="Project 2">
-                <h2 class="project-title">Project 2</h2>
-                <p class="project-description">Short description of Project 2</p>
-            </a>
-            <a href="https://github.com/your-github-repo-3" target="_blank" class="project">
-                <img src="project3.jpg" alt="Project 3">
-                <h2 class="project-title">Project 3</h2>
-                <p class="project-description">Short description of Project 3</p>
-            </a>
-            <a href="https://github.com/your-github-repo-4" target="_blank" class="project">
-                <img src="project4.jpg" alt="Project 4">
-                <h2 class="project-title">Project 4</h2>
-                <p class="project-description">Short description of Project 4</p>
-            </a>
-        </div>
+  <div class="project">
+    <h3 class="project-title">Project 1</h3>
+    <p class="project-description">Description of Project 1</p>
+    <a class="project-link" href="https://github.com/your-project-1" target="_blank">GitHub</a>
+  </div>
 
-        <div class="footer">
-            <a href="https://github.com/your-github-profile" target="_blank">
-                <img src="github-logo.png" alt="GitHub" width="30" height="30">
-            </a>
-            <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank">
-                <img src="linkedin-logo.png" alt="LinkedIn" width="30" height="30">
-            </a>
-        </div>
-    </div>
+  <div class="project">
+    <h3 class="project-title">Project 2</h3>
+    <p class="project-description">Description of Project 2</p>
+    <a class="project-link" href="https://github.com/your-project-2" target="_blank">GitHub</a>
+  </div>
+
+  <div class="project">
+    <h3 class="project-title">Project 3</h3>
+    <p class="project-description">Description of Project 3</p>
+    <a class="project-link" href="https://github.com/your-project-3" target="_blank">GitHub</a>
+  </div>
+
+  <div class="contact-links">
+    <a href="https://github.com/will-iamxu" target="_blank"><img src="github-logo.png" alt="GitHub"></a>
+    <a href="https://www.linkedin.com/in/william-xu-35507a22b/" target="_blank"><img src="linkedin-logo.png" alt="LinkedIn"></a>
+  </div>
+
+  <script>
+    function navigateToHome() {
+      window.location.href = "index.html";
+    }
+  </script>
 </body>
 </html>
