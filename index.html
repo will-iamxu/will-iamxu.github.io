@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Your Portfolio</title>
+  <style>
+    body {
+      background-color: #7E57C2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .welcome-screen {
+      text-align: center;
+      color: #FFF;
+    }
+
+    .welcome-screen h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .welcome-screen h2::after {
+      content: "|";
+      display: inline-block;
+      animation: blink-caret 0.75s step-end infinite;
+    }
+
+    @keyframes blink-caret {
+      from, to {
+        border-color: transparent;
+      }
+      50% {
+        border-color: white;
+      }
+    }
+
+    .welcome-screen p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .welcome-screen a {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #5E35B1;
+      color: #FFF;
+      text-decoration: none;
+      font-size: 18px;
+      border-radius: 5px;
+    }
+
+    .welcome-screen a:hover {
+      background-color: #4527A0;
+    }
+
+    .contact-links {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+    }
+
+    .contact-links a {
+      display: inline-block;
+      margin-left: 10px;
+      width: 40px;
+      height: 40px;
+      background-color: #7E57C2;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 40px;
+      color: #7E57C2;
+      text-decoration: none;
+    }
+
+    .contact-links a img {
+      width: 30px;
+      height: 30px;
+      background-color: transparent;
+    }
+
+    .contact-links a:hover {
+      background-color: #4527A0;
+      color: #FFF;
+    }
+    
+    .about-button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      padding: 10px 20px;
+      background-color: #7E57C2;
+      color: #FFF;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .about-button:hover {
+      background-color: #4527A0;
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var welcomeText = "Welcome to William Xu's Portfolio";
+      var welcomeScreen = document.querySelector(".welcome-screen");
+      var index = 0;
+
+      function typeText() {
+        if (index < welcomeText.length) {
+          welcomeScreen.querySelector("h2").textContent += welcomeText.charAt(index);
+          index++;
+          setTimeout(typeText, 100);
+        }
+      }
+
+      typeText();
+    });
+  </script>
+</head>
+<body>
+  <button class="about-button" onclick="navigateToAbout()">About Me</button>
+
+  <div class="welcome-screen">
+    <h2></h2>
+    <p><a href="projects.html">Explore Projects</a></p>
+  </div>
+
+  <div class="contact-links">
+    <a href="https://github.com/will-iamxu" target="_blank"><img src="github-logo.png" alt="GitHub"></a>
+    <a href="https://www.linkedin.com/in/william-xu-35507a22b/" target="_blank"><img src="linkedin-logo.png" alt="LinkedIn"></a>
+  </div>
+
+  <script>
+    function navigateToAbout() {
+      window.location.href = "about.html";
+    }
+  </script>
+</body>
+</html>

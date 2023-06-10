@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>About Me</title>
+  <style>
+    body {
+      background-color: #7E57C2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: #FFF;
+    }
+
+    .about-section {
+      text-align: center;
+    }
+
+    .about-section h3 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .about-section p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .contact-links {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+    }
+
+    .contact-links a {
+      display: inline-block;
+      margin-left: 10px;
+      width: 40px;
+      height: 40px;
+      background-color: #7E57C2;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 40px;
+      color: #7E57C2;
+      text-decoration: none;
+    }
+
+    .contact-links a img {
+      width: 30px;
+      height: 30px;
+      background-color: transparent;
+    }
+
+    .contact-links a:hover {
+      background-color: #4527A0;
+      color: #FFF;
+    }
+
+    .home-button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      padding: 10px 20px;
+      background-color: #7E57C2;
+      color: #FFF;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .home-button:hover {
+      background-color: #4527A0;
+    }
+  </style>
+</head>
+<body>
+  <button class="home-button" onclick="navigateToHome()">Home</button>
+
+  <div class="about-section">
+    <h3>About Me</h3>
+    <p>Replace this text with your own information.</p>
+  </div>
+
+  <div class="contact-links">
+    <a href="https://github.com/will-iamxu" target="_blank"><img src="github-logo.png" alt="GitHub"></a>
+    <a href="https://www.linkedin.com/in/william-xu-35507a22b/" target="_blank"><img src="linkedin-logo.png" alt="LinkedIn"></a>
+  </div>
+
+  <script>
+    function navigateToHome() {
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>
