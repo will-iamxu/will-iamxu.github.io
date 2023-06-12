@@ -3,47 +3,85 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
   <title>Projects</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css">
   <style>
     body {
       background-color: #7E57C2;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
       color: #FFF;
     }
 
-    .project {
-      background-color: #4527A0;
-      width: 400px;
+    #fullpage {
+      position: relative;
+    }
+
+    .section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
       padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 5px;
     }
 
-    .project-title {
-      font-size: 24px;
-      margin-bottom: 10px;
-    }
-
-    .project-description {
-      font-size: 16px;
+    .section h2 {
+      font-size: 36px;
       margin-bottom: 20px;
     }
 
-    .project-link {
-      font-size: 16px;
-      color: #FFF;
+    .section p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .section .project-image {
+      width: 300px;
+      height: 300px;
+      background-color: #EEE;
+      margin-bottom: 20px;
+      cursor: pointer;
+    }
+
+    .section .project-text {
+      text-align: center;
+    }
+
+    .section .project-skills {
+      font-size: 14px;
+      color: #888;
+    }
+
+    .contact-links {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+    }
+
+    .contact-links a {
+      display: inline-block;
+      margin-left: 10px;
+      width: 40px;
+      height: 40px;
+      background-color: #7E57C2;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 40px;
+      color: #7E57C2;
       text-decoration: none;
     }
 
-    .project-link:hover {
-      text-decoration: underline;
+    .contact-links a img {
+      width: 30px;
+      height: 30px;
+      background-color: transparent;
+    }
+
+    .contact-links a:hover {
+      background-color: #4527A0;
+      color: #FFF;
     }
 
     .home-button {
@@ -62,60 +100,36 @@
     .home-button:hover {
       background-color: #4527A0;
     }
-
-    .contact-links {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        gap: 4px; 
-      }
-      
-      .contact-links a {
-        margin-left: 10px;
-        width: 40px;
-        height: 40px;
-        background-color: #7E57C2;
-        border-radius: 50%;
-        text-align: center;
-        line-height: 40px;
-        color: #7E57C2;
-        text-decoration: none;
-      }
-      
-      .contact-links a img {
-        width: 30px;
-        height: 30px;
-        background-color: transparent;
-      }
-      
-      .contact-links a:hover {
-        background-color: #4527A0;
-        color: #FFF;
-      }      
   </style>
 </head>
 <body>
-  <button class="home-button" onclick="navigateToHome()">Home</button>
+  <div id="fullpage">
+    <div class="section">
+      <h2>Project 1</h2>
+      <div class="project-image" style="background-image: url('project1.jpg');"></div>
+      <div class="project-text">
+        <p>Short project description goes here.</p>
+        <div class="project-skills">Skills: HTML, CSS, JavaScript</div>
+      </div>
+    </div>
 
-  <div class="project">
-    <h3 class="project-title">Project 1</h3>
-    <p class="project-description">Description of Project 1</p>
-    <a class="project-link" href="https://github.com/your-project-1" target="_blank">GitHub</a>
-  </div>
+    <div class="section">
+      <h2>Project 2</h2>
+      <div class="project-image" style="background-image: url('project2.jpg');"></div>
+      <div class="project-text">
+        <p>Short project description goes here.</p>
+        <div class="project-skills">Skills: Python, Django, PostgreSQL</div>
+      </div>
+    </div>
 
-  <div class="project">
-    <h3 class="project-title">Project 2</h3>
-    <p class="project-description">Description of Project 2</p>
-    <a class="project-link" href="https://github.com/your-project-2" target="_blank">GitHub</a>
-  </div>
-
-  <div class="project">
-    <h3 class="project-title">Project 3</h3>
-    <p class="project-description">Description of Project 3</p>
-    <a class="project-link" href="https://github.com/your-project-3" target="_blank">GitHub</a>
+    <div class="section">
+      <h2>Project 3</h2>
+      <div class="project-image" style="background-image: url('project3.jpg');"></div>
+      <div class="project-text">
+        <p>Short project description goes here.</p>
+        <div class="project-skills">Skills: React, Redux, Node.js</div>
+      </div>
+    </div>
   </div>
 
   <div class="contact-links">
@@ -123,7 +137,24 @@
     <a href="https://www.linkedin.com/in/william-xu-35507a22b/" target="_blank"><img src="linkedin-logo.png" alt="LinkedIn"></a>
   </div>
 
+  <button class="home-button" onclick="navigateToHome()">Home</button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js"></script>
   <script>
+    new fullpage('#fullpage', {
+      navigation: false,
+      scrollOverflow: true,
+      verticalCentered: false,
+      afterLoad: function(origin, destination) {
+        var homeButton = document.querySelector('.home-button');
+        if (destination.index === 0) {
+          homeButton.style.display = 'block';
+        } else {
+          homeButton.style.display = 'none';
+        }
+      }
+    });
+
     function navigateToHome() {
       window.location.href = "index.html";
     }
