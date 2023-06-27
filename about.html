@@ -35,8 +35,8 @@
     .about-section p {
       font-size: 18px;
       margin-bottom: 7.5px;
-      height: 150px; 
-      overflow: hidden; 
+      min-height: 200px; 
+      border-bottom: 0.2em solid transparent;
     }
 
     .about-section p::after {
@@ -47,7 +47,7 @@
 
     .photo-container {
       text-align: center;
-      margin-bottom: 10px;
+      margin-bottom: 5px;
       display: flex;
       justify-content: center;
     }
@@ -130,8 +130,7 @@
   </style>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      var aboutText = "Had my first ever coding experience with scratch in 4th grade making Illuminati conspiracy theories. Would then attempt to learn how to use command blocks in minecraft, which did not turn out very well at all. Joined robotics in 7th grade as part of the software side but was so terrible that I got kicked out. Gave up on coding until junior year of high school where coding sparked a newly found interest through a ML internship at Palos Verdes Pulse. Now I code whatever projects that teach me something, is applicable, and is interesting. If you don't see me at the gym or playing games, I'm out with friends, camping, or just exploring random stuff. Currently a rising sophomore at TAMU.";
-      var aboutTextElement = document.querySelector(".about-section p");
+      var aboutText = "Had my first ever coding experience with scratch in 4th grade making Illuminati conspiracy theories. Would then attempt to learn how to use command blocks in minecraft. Joined robotics in 7th grade as part of the software side but was uninterested. Stopped coding until junior year of high school where coding sparked a newly found interest through a ML internship at Palos Verdes Pulse. Now I code whatever projects are applicable and interesting. If you don't see me at the gym or playing games, I'm either out with friends, camping, or just exploring. Currently a rising sophomore at TAMU. ";      var aboutTextElement = document.querySelector(".about-section p");
       var index = 0;
 
       function typeText() {
@@ -139,11 +138,8 @@
           aboutTextElement.textContent += aboutText.charAt(index);
           index++;
           setTimeout(typeText, 45);
-        } else {
-          aboutTextElement.textContent = aboutTextElement.textContent.slice(0, -1);
         }
       }
-
       typeText();
     });
 
